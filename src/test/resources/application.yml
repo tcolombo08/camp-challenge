@@ -1,0 +1,17 @@
+# Application
+server:
+  port: 8080
+  servlet:
+    application-display-name: campgladiator
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+#Spring
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: trainers
+      auto-index-creation: true

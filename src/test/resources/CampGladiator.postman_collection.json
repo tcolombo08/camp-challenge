@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "b0e5513c-d687-4cab-ba0a-6abfba05ed3a",
+		"name": "CampGladiator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save trainer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"trainer2@campgladiator.com\",\n    \"phone\" : \"5125125120\",\n    \"firstName\": \"Fearless2\",\n    \"lastName\": \"Contender\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/camp/trainer/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"camp",
+						"trainer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get trainer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/camp/trainer/60ba8737b8a91729e781e5fa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"camp",
+						"trainer",
+						"60ba8737b8a91729e781e5fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List trainers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/camp/trainer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"camp",
+						"trainer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
