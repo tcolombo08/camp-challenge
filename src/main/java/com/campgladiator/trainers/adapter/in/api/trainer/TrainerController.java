@@ -13,9 +13,11 @@ import com.campgladiator.trainers.domain.trainer.usecase.FindTrainerUseCase;
 import com.campgladiator.trainers.domain.trainer.usecase.ListTrainersUseCase;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.http.MediaType;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Log4j2
 @RestController
+@Validated
 @RequestMapping(value = PATH)
 @RequiredArgsConstructor
 public class TrainerController {
@@ -36,8 +39,9 @@ public class TrainerController {
   private final TrainerCreationRequestMapper trainerCreationRequestMapper;
   private final TrainerDtoMapper trainerDtoMapper;
 
-  @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-  public TrainerDto create(@RequestBody TrainerCreationRequestDTO creationRequestDto) {
+  @PostMapping
+  public TrainerDto create(
+      @NotNull @Valid @RequestBody TrainerCreationRequestDTO creationRequestDto) {
     log.debug("Creating a Trainer... '{}'", () -> creationRequestDto);
 
     final TrainerCreationRequest creationRequest =

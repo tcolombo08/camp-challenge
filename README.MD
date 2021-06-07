@@ -3,6 +3,11 @@
 # Trainers API Challenge for Camp Gladiator
 
 <p>This is an example API built on top of Spring Boot + MongoDB as part of a challenge in the recruiting process for Camp Gladiator.</p>
+<p>The project follows the Hexagonal architecture patter, an implementation of Clean Architecture. Hexagonal facilitates the refactoring process that microservices and APIs are usually subject to</p>
+
+* [Clean Architecture with Spring by Tom Hombergs](https://www.youtube.com/watch?v=cPH5AiqLQTo) - YouTube Video
+
+![Hexagonal Architecture](hexagonalArchitecture.png)
 
 ## Requirements
 Create two REST API endpoints as follows:
